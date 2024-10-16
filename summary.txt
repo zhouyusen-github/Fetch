@@ -1,0 +1,15 @@
+# 1. Why did you choose the tools, libraries, and language you used for the coding exercise?
+* I chose Go because I used it during an internship at ByteDance and found it enjoyable to work with. Go is well-suited for building microservices, offering lightweight deployment and faster startup times compared to Java.
+* I selected the Gin framework because it’s one of the most popular web frameworks for Go, known for its speed and minimal overhead.
+* For testing, I used curl command in shell scripts, because they come pre-installed on operating system, and they are simple and lightweight, easy to automate, and can be tracked in version control like Git.
+
+# 2. What are the advantages and disadvantages of your solution?
+* Advantages:
+    1. I accounted for edge cases, such as adding negative points, which could potentially affect the system’s integrity.
+    2. I used locks (sync.Mutex) to protect critical sections, ensuring thread safety when handling concurrent requests.
+* Disadvantages:
+    1. The SpendPoints API sorts the list of points records every time it’s called, which could become computationally expensive as the list grows. However, since add operations are expected to occur more frequently than spend operations, I opted for this trade-off to keep AddPoints API simple.
+
+# 3. What has been a favorite school/personal project thus far? What about it that challenged you?
+* My favorite project was developing a Thrift-based service in Go during my internship at ByteDance. In this project, I fetched user group data from multiple sources and stored it in Redis and MySQL to efficiently handle advertisers’ requests. This experience gave me valuable hands-on knowledge of RPC frameworks, caching, and handling parallel requests.
+* Challenge: The most difficult part was balancing the frequency of data updates with the performance of the API, ensuring that the system remained responsive while providing up-to-date information.
